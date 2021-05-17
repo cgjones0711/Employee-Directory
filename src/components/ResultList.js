@@ -1,11 +1,12 @@
 import React from "react";
-
+let employee = props.results;
 function ResultList(props) {
+ 
   return (
     <ul className="list-group">
-      {props.results.map(result => (
-        <li key={result.id} className="list-group-row">
-        <img alt="Employee" src={result.name} className="img-fluid" />
+      {props.employees.map(employees => (
+        <li key={employees.id} className="list-group-row">
+        <img alt="employee.name" src={employee.picture.thumbnail} className="img-fluid" />
       </li>
       ))}
     </ul>
@@ -13,3 +14,4 @@ function ResultList(props) {
 }
 
 export default ResultList;
+       

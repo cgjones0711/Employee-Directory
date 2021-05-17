@@ -6,12 +6,14 @@ import API from "../utils/API";
 class SearchResultContainer extends Component {
   state = {
     search: "",
-    results: []
+    results: [
+      
+    ]
   };
 
   // When this component mounts, search the API for pictures of employees
   componentDidMount() {
-    this.searchEmployee();
+    this.searchEmployee("employees");
   }
 
   searchEmployee = query => {
