@@ -11,19 +11,19 @@ class SearchResultContainer extends Component {
     ]
   };
 
-  // When this component mounts, search the API for pictures of employees
+  // When this component mounts, search the API for data of employees
   componentDidMount() {
-    this.searchEmployee("employees");
+    this.searchEmployee();
   }
 
-  searchEmployee = query => {
-    API.search(query)
+  searchEmployee = () => {
+    API.search()
 
       .then(res => 
-          {
-            console.log(res.data.results)
+          
+            
             this.setState({ results: res.data.results })
-          })
+          )
       .catch(err => console.log(err));
   };
 
@@ -40,7 +40,7 @@ class SearchResultContainer extends Component {
   // When the form is submitted, search the employee API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchEmployee(this.state.search);
+    this.searchEmployee();
   };
 
   render() {
@@ -51,7 +51,7 @@ class SearchResultContainer extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.result} />
+        <ResultList results={this.state.results} />
       </div>
     );
   }
