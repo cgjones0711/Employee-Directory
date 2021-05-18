@@ -3,9 +3,9 @@ import React from "react";
 function ResultList(props) {
 let employees = props.results;
   
-  employees.filter((employee) =>  {
-    if(employees === props.results.target){
-    return (
+  {employees.filter((employee) =>  (
+    if(employees === props.search){
+    render (
       <ul className="list-group">
      <li key={employee.cell} className="list-group-row">
           <img
@@ -21,7 +21,7 @@ let employees = props.results;
    
     {employee.cell}
     </li>
-  ))
+  )}
   </ul>
     );
     }
@@ -48,7 +48,8 @@ let employees = props.results;
       ))}
     </ul>
   );
-}
+};
+  };
   export default ResultList;
 
 
