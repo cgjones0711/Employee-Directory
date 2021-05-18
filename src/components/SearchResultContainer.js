@@ -51,7 +51,10 @@ class SearchResultContainer extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} />
+        <ResultList search={this.state.search}
+
+        
+         results={this.state.results} />
       </div>
     );
   }
